@@ -2,7 +2,6 @@
 import asyncio
 import os
 import discord
-from rave_music import get_song
 from discord.ext.commands import Bot
 from dotenv import load_dotenv
 
