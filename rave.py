@@ -16,7 +16,7 @@ USER = os.getenv('USER_IS_GONE')
 @client.event
 async def on_connect():
     # Setting `Listening ` status
-    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name='Crab Rave'))
+    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name='Crab Rave'))
 
 @client.event
 async def on_voice_state_update(member, before, after):
