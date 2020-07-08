@@ -7,12 +7,16 @@ from dotenv import load_dotenv
 
 # No internal imports
 
-client = Bot(command_prefix='!')
+client = Bot(command_prefix='*')
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 USER = os.getenv('USER_IS_GONE')
 
+@client.event
+async def on_connect():
+    # Setting `Listening ` status
+    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name='Crab Rave'))
 
 @client.event
 async def on_voice_state_update(member, before, after):
